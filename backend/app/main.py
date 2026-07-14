@@ -1,18 +1,19 @@
 from fastapi import FastAPI, HTTPException, status
+from pydantic import BaseModel
+from typing import Optional
 
 app = FastAPI()
 
-class Task:
-    def __init__(self, id: int, title: str, done: bool):
-        self.id = id
-        self.title = title
-        self.done = done
+class Task(BaseModel):
+    id: Optional[int] = None
+    title: Optional[str] = None
+    done: bool = False
 
 tasks = [
     Task(id=1, title="Buy groceries", done=False),
     Task(id=2, title="Finish FastAPI tutorial", done=True),
     Task(id=3, title="Clean the room", done=False),
-]
+] 
 
 @app.get("/")
 def read_root():
@@ -35,3 +36,23 @@ def get_task(task_id: int):
     raise HTTPException(
         status_code=status.HTTP_404_NOT_FOUND, detail=f"Task {task_id} not found"
     )
+
+
+@app.post("/tasks", status_code=status.HTTP_201_CREATED)
+def create_task(task: Task):
+
+    if not task.title or task.title.strip() == "":
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Title is missing or empty"
+        )
+
+    if len(tasks) == 0:
+        next_id = 1
+    else:
+        next_id = tasks[-1].id + 1
+
+    new_task = Task(id=next_id, title=task.title, done=False)
+
+    tasks.append(new_task)
+
+    return new_task
