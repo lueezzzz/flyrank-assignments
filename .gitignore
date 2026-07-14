@@ -1,0 +1,39 @@
+# Python artifacts
+.crud_api/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+env/
+venv/
+.venv/
+__pypackages__/
+
+# Distribution / packaging
+build/
+dist/
+eggs/
+.eggs/
+*.egg-info/
+pip-wheel-metadata/
+
+# Testing caches and reports
+.pytest_cache/
+.mypy_cache/
+.tox/
+.coverage
+
+# Misc
+.cache
+.env
+*.sqlite3
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+
