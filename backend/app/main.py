@@ -13,7 +13,8 @@ tasks = [
     Task(id=1, title="Buy groceries", done=False),
     Task(id=2, title="Finish FastAPI tutorial", done=True),
     Task(id=3, title="Clean the room", done=False),
-] 
+]
+
 
 @app.get("/")
 def read_root():
@@ -21,14 +22,14 @@ def read_root():
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok"} 
+    return {"status": "ok"}
 
 
 @app.get("/tasks")
 def get_tasks():
     return tasks
 
-@app.get("/tasks/{task_id}")
+@app.get("/tasks/{task_id}", status_code=status.HTTP_200_OK)
 def get_task(task_id: int):
     for task in tasks:
         if task.id == task_id:
@@ -56,3 +57,34 @@ def create_task(task: Task):
     tasks.append(new_task)
 
     return new_task
+
+@app.put("/tasks/{task_id}")
+def update_task(task_id: int, title: str, done: bool):
+
+    if title is None and done is False:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="request cannot be empty or invalid",
+        )
+
+    for task in tasks:
+        if task.id == task_id:
+            task.title = title
+            task.done = done
+            return task
+
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND, detail=f"Task {task_id} not found"
+    )
+
+
+@app.delete("/tasks/{task_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_task(task_id: int):
+    for task in tasks:
+        if task.id == task_id:
+            tasks.remove(task)
+            return
+
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND, detail=f"Task {task_id} not found"
+    )
