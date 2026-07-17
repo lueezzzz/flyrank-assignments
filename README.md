@@ -59,6 +59,10 @@ content-type: application/json
 
 # Screenshots
 
+## Frontend Basic Output
+
+![frontend_output](images/frontend_output.png)
+
 ## API Endpoints
 
 ![end_points](images/end_points.png)
