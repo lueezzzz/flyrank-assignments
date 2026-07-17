@@ -6,10 +6,12 @@ This is a lightweight RESTful API backend built with Python and FastAPI. It prov
 ---
 
 ## How to Install & Run
-You can install all necessary dependencies and launch the development server using the following single, chained command from the root of your project repository:
+This project is fully containerized using Docker. You no longer need to install Python or Node.js locally to run it—you only need to have [Docker](https://docs.docker.com/get-docker/) installed on your machine.
+
+To build the images, install dependencies, and launch the development servers, run the following command from the root of your project repository:
 
 ```bash
-pip install -r backend/requirements.txt && uvicorn backend.app.main:app --reload
+docker compose up --build
 ```
 *Note: This command installs the packages listed in your requirements file and immediately spins up the FastAPI server with hot-reloading enabled. The API will be accessible at `http://127.0.0.1:8000`.*
 
