@@ -41,7 +41,7 @@ Here is an example of what an HTTP response looks like when fetching a single it
 
 **Command:**
 ```bash
-curl -i http://127.0.0.1:8000/items/1
+curl -i http://127.0.0.1:8000/tasks/1
 ```
 
 **Output:**
