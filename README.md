@@ -1,7 +1,9 @@
 # CRUD with FastAPI
 
 ## What This Is
-This is a lightweight RESTful API backend built with Python and FastAPI. It provides standard CRUD (Create, Read, Update, Delete) functionality to demonstrate how to handle API routing, data validation, and basic request handling within a modern Python application. 
+This is a full-stack, containerized application designed to demonstrate a complete modern development workflow. It features a lightweight RESTful API backend built with Python and FastAPI, seamlessly connected to a frontend user interface powered by React and Vite (written in TypeScript). 
+
+The project provides standard CRUD (Create, Read, Update, Delete) functionality to showcase API routing, data validation, CORS configuration, and frontend state management. The entire application is orchestrated using Docker Compose, which provides a consistent, isolated development environment with instant hot-reloading for both the frontend and backend.
 
 ---
 
