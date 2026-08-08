@@ -59,47 +59,7 @@ content-type: application/json
 }
 ```
 
-# Screenshots
-
-## Frontend Basic Output
-
-![frontend_output](images/frontend_output.png)
 ## API Endpoints
 
 ![end_points](images/end_points.png)
 
----
-## Health Check
-
-![health_check](images/health_check.png)
-
----
-
-## Get Tasks
-
-![get_tasks](images/get_tasks.png)
-
----
-
-## Get Task by Id
-
-![get_task_id](images/get_task_id.png)
-
----
-
-## Create Task
-
-![create_task](images/create_task.png)
-
----
-
-## Update Task
-
-![update_task_input](images/update_task_input.png)
-
-![update_task](images/update_task.png)
-
----
-## Delete Task
-
-![delete_task](images/delete_task.png)
