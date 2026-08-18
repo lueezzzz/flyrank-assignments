@@ -1,8 +1,8 @@
-# CRUD with FastAPI
+# Week 2 - A1: Task CRUD API
 
 ## What This Is
 
-
+A minimal FastAPI backend that exposes a CRUD API for managing tasks (`title`, `done`). Tasks are stored in an in-memory Python list (`app/db/mock_db.py`) seeded with a few sample entries on startup rather than a real database, so all data resets whenever the server restarts. 
 ---
 
 ## How to Install & Run
