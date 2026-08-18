@@ -1,4 +1,4 @@
-# Week 3 - A2: Task CRUD API
+# Week 3 - A2: Connecting Your Database
 
 A FastAPI backend for managing tasks (create, read, update, delete), backed by SQLite and containerized with Docker.
 
